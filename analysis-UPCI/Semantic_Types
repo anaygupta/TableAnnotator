@@ -1,0 +1,7 @@
+Semantic Types found in the STR Column of umls.MRCONSO and validated by BioPortal and UMLS
+(Only for first two tables)
+
+Table 1 (SpecId = 000e2ca1-9a11-46f2-860c-4de0ca5be369)
+  Semantic Type: [Tissue]
+Table 2(SpecId = 009575f9-74e8-4a6d-9fa6-3cae72fd01c3)
+  Semantic Type: [Tissue]
