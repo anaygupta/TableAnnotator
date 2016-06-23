@@ -1,6 +1,6 @@
+//Query1
 use UPCI_table_db_spls;
-
-/*SELECT * FROM Article JOIN ArtTable on (idArticle=Article_idArticle);*/
+/*SELECT */
 SELECT idArticle, Title, SpecId, idTable, TableOrder, RowN, ColumnN, Section, Content, WholeStub  
 FROM Article JOIN ArtTable ON (idArticle=Article_idArticle) 
 JOIN Cell ON (idTable=Table_idTable) 
@@ -9,3 +9,6 @@ JOIN CellRole ON (CellRole_idCellRole=idCellRole)
 WHERE Section LIKE ('%DRUG INTERACTIONS%'/*OR '%Pharmacokinetics%'*/) AND (SpecId='000e2ca1-9a11-46f2-860c-4de0ca5be369' 
 OR '009575f9-74e8-4a6d-9fa6-3cae72fd01c3') 
 ORDER BY idTable ASC, RowN ASC;
+
+//Query2
+SELECT * FROM UPCI_table_db_spls.Annotation JOIN umls.MRCONSO ON (AnnotationID=CUI);
