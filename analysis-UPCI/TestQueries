@@ -12,3 +12,13 @@ ORDER BY idTable ASC, RowN ASC;
 
 //Query2
 SELECT * FROM UPCI_table_db_spls.Annotation JOIN umls.MRCONSO ON (AnnotationID=CUI);
+
+//Modified Query 1 WITH ANNOTATIONDESCRIPTION INCLUDED
+use UPCI_table_db_spls;
+SELECT AnnotationDescription, Title, SpecId, idTable, TableOrder, RowN, ColumnN, Section, Cell.Content, WholeStub  
+FROM Article JOIN ArtTable ON (idArticle=Article_idArticle) 
+JOIN Cell ON (ArtTable.idTable=Cell.Table_idTable) 
+JOIN Annotation ON (Annotation.Cell_idCell=Cell.idCell)
+WHERE (Section LIKE '%DRUG INTERACTIONS%') OR (Section LIKE '%Pharmacokinetics%') AND (SpecId='000e2ca1-9a11-46f2-860c-4de0ca5be369' 
+OR '009575f9-74e8-4a6d-9fa6-3cae72fd01c3')
+ORDER BY idTable ASC, RowN ASC;
